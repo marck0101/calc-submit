@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./calculos.js" defer></script>
+    <script src="./Testejson.js" defer></script>
+    <!-- <script src="./prototipo final so o basico/calculos.js" defer></script>
+    <script src="./prototipo final so o basico/Testejson.js" defer></script> -->
+    <!-- <link href="javaScript.js"> -->
+    <link rel="stylesheet" type="text/css" href="./meuCss.css">
+    <!-- <link rel="stylesheet" type="text/css" href="./prototipo final so o basico/meuCss.css"> -->
+    </link>
+    <title>calculadora só o basico</title>
+</head>
+
+<body>
+    <div class="borda">
+
+        <div class="borda">
+            <h3>1. Local com rede elétrica?</h3>
+
+            <select name="redeEletrica" id="redeEletrica" class="btn btn-danger">
+                <option value="sim" selected>Sim</option>
+                <option value="nao">Não</option>
+            </select>
+        </div>
+
+        <div class="borda">
+            <h5>2.Qual tipo de local?</h5>
+            <select name="local" id="local" class="btn btn-danger" on-Change="combo(this, 'box)">
+                <option value="empresa" selected>empresa</option>
+                <option value="outro">outro</option>
+            </select>
+        </div>
+
+        <div class="borda">
+            <h5>3.Local da instalação</h5>
+            <label>CEP:</label><br>
+            <input class="form-control" type="text" id="cep" name="cep" oninput="getCEP();" value=""
+                placeholder="CEP do local" required>
+            <br>
+            <label>Localidade:</label><br>
+            <div id="localidade"></div>
+        </div>
+        <!--com o cep é possóvel identificar a cidade, e também é possível ver em uma Database a irradiação solar-->
+
+        <div class="borda">
+            <h5>4.Quanto gasta por mês?</h5>
+            <label>R$:</label><br>
+            <span class="input-euro left" type="text" id="gastoMensal" name="gastoMensal">
+                <input class="form-control " name="contaMes" id="contaMes" type="text" placeholder="2000" value="500" />
+            </span>
+        </div>
+
+        <div class="borda">
+            <h5>5.Qual o valor da tarifa paga ?</h5>
+            <input class="form-control" name="tarifa" id="tarifa" type="text" placeholder="0.58" value="10" />
+        </div>
+        <div class="borda">
+            <h5>6.Quantos kWp/h são consumidos</h5>
+            <input class="form-control " name="kwpConsumo" id="kwpConsumo" type="text" placeholder="3.389"
+                value="3.389" />
+        </div>
+
+        <h5>Informações para contato</h5>
+        <form action="https://formsubmit.co/74ef80fd-a092-4ded-9aa6-3712148670e0" method="POST">
+            <div>
+                <label>Nome Completo</label>
+                <input type="text" name="name" id="nomeCompleto" class="form-control " placeholder="Nome e Sobrenome"
+                    value="Nome e Sobrenome">
+
+            </div>
+
+            <div>
+                <label>Telefone de contato</label>
+                <input type="telefoneContato" name="message" id="telefoneContato" class="form-control "
+                    placeholder="(55) 9 0000-0000">
+            </div>
+
+            <div>
+                <label>E-MAIL</label>
+                <input type="email" name="email" id="email" class="form-control " placeholder="nome@email.com"
+                    value="nome@email.com">
+            </div>
+
+
+            <button class="btn btn-secondary btn-lg btn-block" onclick="maeFunction() ">Simule Agora</button>
+        </form>
+
+
+    </div>
+</body>
+
+</html>
