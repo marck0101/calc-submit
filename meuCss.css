@@ -1,9 +1,128 @@
+.grid-1 {
+    display: grid;
+    width: 100%;
+    margin: 0 auto;
+
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px auto auto 80px;
+    grid-gap: 10px;
+
+    grid-template-areas: "header"
+        "main"
+        "sidebar"
+        "footer";
+}
+
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --screenSize: "extra small";
+    --containerSize: auto;
+    --gutter: 15px;
+}
+
+.borda3 {
+    background-color: #818182;
+    text-align: center;
+    padding-top: 5px;
+    margin: 5px;
+    height: "100";
+    width: "50%";
+}
+
+.borda4 {
+    background-color: #cce5ff;
+    text-align: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    margin: 5px;
+    border: #000;
+}
+
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    :root {
+        --screenSize: "small";
+        --containerSize: 550px;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+    :root {
+        --screenSize: "medium";
+        --containerSize: 750px;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    :root {
+        --screenSize: "large";
+        --containerSize: 970px;
+    }
+}
+
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    :root {
+        --screenSize: "extra large";
+        --containerSize: 1170px;
+    }
+}
+
+/* Grid */
+.container {
+    width: var(--containerSize);
+    display: block;
+    margin: 0 auto;
+}
+
+.container-fluid {
+    width: 100%;
+    display: block;
+}
+
+.container:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.row {
+    display: flex;
+}
+
+.col,
+.col-2,
+.col-6 {
+    padding-left: var(--gutter);
+    padding-right: var(--gutter);
+}
+
+.col {
+    flex-grow: 1;
+    max-width: 100%;
+}
+
+.col-2 {
+    flex-grow: 0;
+}
+
+
+
+
 .alinhamento {
     margin: 50px;
     margin-top: 20px;
     border: 5px;
     padding-top: 20px;
-    
+
 }
 
 /* Daqui para baixo não é meu não kkkk          */
@@ -72,14 +191,14 @@
 
 /* banner embaixo do menu, formatação {*/
 
-.banner__item__content{
-position: relative;
-display: flex;
-flex-direction: column;
-justify-content: flex-end;
-align-items: flex-start;
-height: 384px;
-z-index: 1;
+.banner__item__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    height: 384px;
+    z-index: 1;
 }
 
 .banner__item {
@@ -140,7 +259,9 @@ h3 {
     padding-top: 10px;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
 }
 
@@ -11192,8 +11313,7 @@ a.text-dark:focus {
     visibility: hidden !important;
 }
 
-@media print 
-{
+@media print {
 
     *,
     *::before,
@@ -12441,33 +12561,3 @@ body.overlay .backdrop {
     text-align: center;
     display: block
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
