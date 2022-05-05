@@ -22,7 +22,7 @@ function getCEP() {
 
 function captApresenta(cep, localidade, redeEletrica, local, contaMes, kwpConsumo, nomeCompleto, telefoneContato, email) {
     var cep = document.getElementById("cep").value;
-    var localidade = document.getElementById("localidade").value;
+    // var localidade = document.getElementById("localidade").value;
     var redeEletrica = document.getElementById("redeEletrica").value; // como saber se é sim ou n o selecionado
     var local = document.getElementById("local").value;
     var contaMes = document.getElementById("contaMes").value;
@@ -256,7 +256,6 @@ function maeFunction() {
     var geracaoMes = energiaGeradaMes(geracaoAno);
 
     captApresenta(cep, localidade, redeEletrica, local, contaMes, kwpConsumo, nomeCompleto, telefoneContato, email);
-
 
     //exibe grid, mas para isso precisa => ()
     exibeGrid(cm,
